@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shaikh Anis — Frontend Developer &amp; UI Engineer</title>
+    <meta
+      name="description"
+      content="Shaikh Anis is a Frontend Developer and UI Engineer with 3.5+ years of experience building responsive, user-focused interfaces for enterprise travel platforms, now focused on modern React.js engineering."
+    />
+    <meta name="author" content="Shaikh Anis" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="__SITE_URL__/" />
+
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#0d0e10" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Shaikh Anis" />
+    <meta property="og:title" content="Shaikh Anis — Frontend Developer &amp; UI Engineer" />
+    <meta
+      property="og:description"
+      content="3.5+ years building responsive, customer-facing interfaces across enterprise travel platforms. Now focused on modern React.js engineering."
+    />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Shaikh Anis — Frontend Developer and UI Engineer. I build digital experiences that make an impact."
+    />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Shaikh Anis — Frontend Developer &amp; UI Engineer" />
+    <meta
+      name="twitter:description"
+      content="3.5+ years building responsive, customer-facing interfaces across enterprise travel platforms. Now focused on modern React.js engineering."
+    />
+    <meta name="twitter:image" content="__SITE_URL__/og-image.png" />
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Applies the saved colour theme before first paint (no flash). Its hash is allow-listed in vercel.json CSP. -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('sa-theme') === 'light') document.documentElement.dataset.theme = 'light';
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Shaikh Anis",
+        "jobTitle": "Frontend Developer",
+        "description": "Frontend Developer and UI Engineer with 3.5+ years of experience building responsive, customer-facing interfaces for enterprise travel platforms.",
+        "url": "__SITE_URL__/",
+        "worksFor": { "@type": "Organization", "name": "Thomas Cook (India) Limited" },
+        "knowsAbout": ["Frontend Development", "UI Engineering", "JavaScript", "React.js", "HTML5", "CSS3", "Responsive Web Design", "REST API Integration"]
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <div style="max-width: 40rem; margin: 4rem auto; padding: 0 1.25rem; font-family: system-ui, sans-serif; line-height: 1.6">
+        <h1>Shaikh Anis — Frontend Developer &amp; UI Engineer</h1>
+        <p>
+          Frontend Developer with 3.5+ years of experience building responsive, user-focused digital experiences across
+          enterprise travel platforms. This portfolio is an interactive React application — please enable JavaScript to view it.
+        </p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

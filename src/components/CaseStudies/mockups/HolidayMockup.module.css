@@ -1,0 +1,441 @@
+/* ==========================================================================
+   Holiday mockup — design pixels on the 1200 × 800 mock canvas (see MockKit).
+   Desktop viewport ≈ 938 × 634; the phone covers its right edge below y ≈ 95,
+   so desktop content keeps to a 790px-wide area that stays in view.
+   ========================================================================== */
+
+/* ---- Shared bits ---------------------------------------------------------- */
+.duration {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  background: var(--mock-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.per {
+  font-size: 11px;
+  line-height: 1;
+  color: var(--color-text-muted);
+}
+
+/* ---- Desktop: search results ---------------------------------------------- */
+.results {
+  height: 100%;
+  background: var(--mock-bg);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  height: 52px;
+  padding: 0 28px;
+  border-bottom: 1px solid var(--mock-line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: auto;
+  color: var(--color-text-muted);
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--mock-surface-2);
+  box-shadow: inset 0 0 0 1px var(--mock-line);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 790px;
+  padding: 22px 28px 0;
+}
+
+/* Search strip — the single accent on this screen is its Search button. */
+.search {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding-right: 8px;
+  border: 1px solid var(--mock-line);
+  border-radius: 14px;
+  background: var(--mock-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.field {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  height: 36px;
+  padding: 0 20px;
+  color: var(--color-text-subtle);
+}
+
+.field + .field {
+  border-left: 1px solid var(--mock-line);
+}
+
+.fieldWide {
+  flex: 1.45;
+}
+
+.fieldText {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-text-muted);
+}
+
+.search .searchBtn {
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+}
+
+.sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.sort strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border: 1px solid var(--mock-line);
+  border-radius: 14px;
+  background: var(--mock-surface);
+}
+
+.card .media {
+  height: 146px;
+  border-radius: 9px;
+}
+
+.mediaBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.save {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--mock-bg);
+  color: var(--color-text-muted);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px 6px 6px;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.where {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-subtle);
+}
+
+.inclusions {
+  display: flex;
+  gap: 6px;
+}
+
+.inclusion {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: var(--mock-surface-2);
+  color: var(--color-text-muted);
+}
+
+.priceRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--mock-line);
+}
+
+.priceRow .viewBtn {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* ---- Phone: package detail ------------------------------------------------ */
+.detail {
+  position: relative;
+  height: 100%;
+  background: var(--mock-bg);
+}
+
+.detail .hero {
+  height: 168px;
+  border-radius: 0;
+}
+
+.heroBar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  left: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.heroActions {
+  display: flex;
+  gap: 8px;
+}
+
+.round {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--mock-bg);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.heroBadge {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+}
+
+.carousel {
+  position: absolute;
+  right: 14px;
+  bottom: 20px;
+  display: flex;
+  gap: 4px;
+}
+
+.carousel i {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--mock-bg);
+  opacity: 0.55;
+}
+
+.carousel i:first-child {
+  width: 14px;
+  opacity: 1;
+}
+
+.detailBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 16px 0;
+}
+
+.detailTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-subtle);
+}
+
+.metaDot {
+  width: 3px;
+  height: 3px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background: var(--mock-skeleton-strong);
+}
+
+.itineraryHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.itineraryHint {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The dotted spine the day markers sit on. */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 18px;
+  left: 4px;
+  border-left: 2px dotted var(--mock-skeleton-strong);
+}
+
+.day {
+  position: relative;
+  display: grid;
+  grid-template-columns: 22px 44px minmax(0, 1fr);
+  align-items: start;
+}
+
+.dayDot {
+  width: 10px;
+  height: 10px;
+  margin-top: 1px;
+  border: 2px solid var(--mock-skeleton-strong);
+  border-radius: 50%;
+  background: var(--mock-bg);
+}
+
+.dayDotStart {
+  border-color: var(--color-text);
+  background: var(--color-text);
+}
+
+.dayLabel {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 12px;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.dayText {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 2px;
+}
+
+.bookBar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+  padding: 0 14px 0 16px;
+  border-top: 1px solid var(--mock-line);
+  background: var(--mock-surface);
+}
+
+.bookBar .bookBtn {
+  height: 42px;
+  padding: 0 20px;
+}

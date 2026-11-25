@@ -1,0 +1,39 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment files (never commit real values; .env.example is the template)
+.env
+.env.*
+!.env.example
+*.local
+
+# Test artifacts
+test-results
+playwright-report
+blob-report
+coverage
+.lighthouse
+
+# Vercel
+.vercel
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.sw?
+
+# Local development harnesses (not part of the site)
+.dev

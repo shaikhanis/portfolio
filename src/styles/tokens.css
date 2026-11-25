@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Design tokens
+   --------------------------------------------------------------------------
+   Single source of truth for colour, type, spacing, radii, motion and layers.
+   Components must use these tokens instead of raw values so both themes stay
+   consistent. Breakpoints follow Bootstrap 5 and are used as literal values in
+   media queries (CSS custom properties cannot be used inside @media):
+     sm 576px · md 768px · lg 992px · xl 1200px · xxl 1400px
+   ========================================================================== */
+
+:root {
+  /* ---- Typography ------------------------------------------------------- */
+  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial,
+    sans-serif;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Fluid scale: values interpolate between ~360px and ~1440px viewports. */
+  --text-2xs: 0.6875rem; /* 11px */
+  --text-xs: 0.75rem; /* 12px — mono labels */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-md: 1.0625rem; /* 17px — body copy */
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.3125rem); /* 18 → 21 — lead paragraphs */
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem); /* 20 → 26 — card titles */
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.3vw, 2.25rem); /* 24 → 36 */
+  --text-3xl: clamp(2rem, 1.35rem + 2.8vw, 3.75rem); /* 32 → 60 — section titles */
+  --text-display: clamp(2.625rem, 1.05rem + 6.6vw, 7rem); /* 42 → 112 — hero */
+
+  --leading-none: 0.96;
+  --leading-tight: 1.04;
+  --leading-snug: 1.18;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.72;
+
+  --tracking-display: -0.045em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-label: 0.14em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --measure: 62ch; /* comfortable line length for prose */
+
+  /* ---- Spacing (4px base) ------------------------------------------------ */
+  --space-1: 0.25rem; /* 4 */
+  --space-2: 0.5rem; /* 8 */
+  --space-3: 0.75rem; /* 12 */
+  --space-4: 1rem; /* 16 */
+  --space-5: 1.5rem; /* 24 */
+  --space-6: 2rem; /* 32 */
+  --space-7: 3rem; /* 48 */
+  --space-8: 4rem; /* 64 */
+  --space-9: 6rem; /* 96 */
+  --space-10: 8rem; /* 128 */
+
+  --section-pad: clamp(4.5rem, 2.5rem + 8vw, 10rem);
+  --gutter: clamp(1rem, 0.55rem + 2.2vw, 2.5rem);
+  --container-max: 1320px;
+  --nav-height: 4.5rem;
+
+  /* ---- Radii -------------------------------------------------------------- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* ---- Motion ------------------------------------------------------------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 600ms;
+
+  /* ---- Layers ------------------------------------------------------------- */
+  --z-base: 1;
+  --z-sticky: 50;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-dialog: 300;
+  --z-toast: 400;
+}
+
+@media (max-width: 575.98px) {
+  :root {
+    --nav-height: 4rem;
+  }
+}
+
+/* ---- Colour: dark theme (default) ---------------------------------------- */
+:root,
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg: #0d0e10;
+  --color-bg-elevated: #121418;
+  --color-surface: #16181c;
+  --color-surface-2: #1c1f24;
+  --color-surface-3: #252930;
+
+  --color-border: rgba(236, 232, 225, 0.09);
+  --color-border-strong: rgba(236, 232, 225, 0.18);
+
+  --color-text: #ece8e1;
+  --color-text-muted: #a39e95;
+  --color-text-subtle: #8d887f;
+
+  --color-accent: #ff6b3d;
+  --color-accent-hover: #ff8459;
+  --color-accent-text: #ff7a50; /* accent for small text: ≥ 4.5:1 on --color-bg */
+  --color-on-accent: #0d0e10;
+  --color-accent-soft: rgba(255, 107, 61, 0.12);
+  --color-accent-line: rgba(255, 107, 61, 0.45);
+
+  --color-success: #4fd18b;
+  --color-success-soft: rgba(79, 209, 139, 0.12);
+  --color-warning: #f2b84b;
+  --color-warning-soft: rgba(242, 184, 75, 0.12);
+  --color-danger: #ff7b86;
+  --color-danger-soft: rgba(255, 123, 134, 0.12);
+  --color-info: #8ab4ff;
+
+  --color-focus: #ff8459;
+  --color-selection: rgba(255, 107, 61, 0.32);
+  --color-overlay: rgba(6, 7, 8, 0.72);
+
+  --grid-line: rgba(236, 232, 225, 0.045);
+  --noise-opacity: 0.04;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px -8px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 24px 64px -16px rgba(0, 0, 0, 0.7);
+
+  /* Illustrative mockup palette (case-study previews) */
+  --mock-bg: #111317;
+  --mock-surface: #1a1d22;
+  --mock-surface-2: #22262c;
+  --mock-line: rgba(236, 232, 225, 0.1);
+  --mock-skeleton: rgba(236, 232, 225, 0.12);
+  --mock-skeleton-strong: rgba(236, 232, 225, 0.22);
+  --mock-sky-1: #2a3442;
+  --mock-sky-2: #49413d;
+  --mock-land-1: #343b33;
+  --mock-land-2: #22282a;
+}
+
+/* ---- Colour: light theme ------------------------------------------------- */
+[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f3f0ea;
+  --color-bg-elevated: #f8f6f1;
+  --color-surface: #fbfaf7;
+  --color-surface-2: #ece8e0;
+  --color-surface-3: #e2ddd3;
+
+  --color-border: rgba(21, 22, 26, 0.1);
+  --color-border-strong: rgba(21, 22, 26, 0.2);
+
+  --color-text: #15161a;
+  --color-text-muted: #55524b;
+  --color-text-subtle: #67635b;
+
+  --color-accent: #c4421a;
+  --color-accent-hover: #a83814;
+  --color-accent-text: #b23b14;
+  --color-on-accent: #ffffff;
+  --color-accent-soft: rgba(196, 66, 26, 0.1);
+  --color-accent-line: rgba(196, 66, 26, 0.45);
+
+  --color-success: #1f7a4a;
+  --color-success-soft: rgba(31, 122, 74, 0.1);
+  --color-warning: #8a5a00;
+  --color-warning-soft: rgba(138, 90, 0, 0.1);
+  --color-danger: #b4232f;
+  --color-danger-soft: rgba(180, 35, 47, 0.08);
+  --color-info: #2453b3;
+
+  --color-focus: #b23b14;
+  --color-selection: rgba(196, 66, 26, 0.22);
+  --color-overlay: rgba(21, 22, 26, 0.45);
+
+  --grid-line: rgba(21, 22, 26, 0.05);
+  --noise-opacity: 0.035;
+
+  --shadow-sm: 0 1px 2px rgba(21, 22, 26, 0.08);
+  --shadow-md: 0 10px 28px -12px rgba(21, 22, 26, 0.22);
+  --shadow-lg: 0 28px 64px -20px rgba(21, 22, 26, 0.3);
+
+  --mock-bg: #f6f3ee;
+  --mock-surface: #ffffff;
+  --mock-surface-2: #eeeae3;
+  --mock-line: rgba(21, 22, 26, 0.1);
+  --mock-skeleton: rgba(21, 22, 26, 0.1);
+  --mock-skeleton-strong: rgba(21, 22, 26, 0.2);
+  --mock-sky-1: #c9d4de;
+  --mock-sky-2: #e8d5c6;
+  --mock-land-1: #a9b3a0;
+  --mock-land-2: #7f8a7c;
+}
+
+/* ---- Bootstrap bridge: map Bootstrap's variables onto our tokens ---------- */
+:root,
+[data-theme='dark'],
+[data-theme='light'] {
+  --bs-body-font-family: var(--font-sans);
+  --bs-body-font-size: var(--text-md);
+  --bs-body-line-height: var(--leading-normal);
+  --bs-body-color: var(--color-text);
+  --bs-body-bg: var(--color-bg);
+  --bs-border-color: var(--color-border);
+  /* Link colour is set in base.css (a { color: inherit }) — Bootstrap's link vars are RGB triplets. */
+  --bs-heading-color: var(--color-text);
+  --bs-emphasis-color: var(--color-text);
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-highlight-bg: var(--color-accent-soft);
+  --bs-code-color: var(--color-accent-text);
+}

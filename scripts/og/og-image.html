@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OG image template</title>
+    <!-- Rendered to public/og-image.png by scripts/generate-assets.mjs (1200 × 630). -->
+    <style>
+      @font-face {
+        font-family: 'Instrument Sans';
+        src: url('/fonts/instrument-sans.woff2') format('woff2');
+        font-weight: 400 700;
+      }
+      @font-face {
+        font-family: 'Instrument Serif';
+        src: url('/fonts/instrument-serif-italic.woff2') format('woff2');
+        font-style: italic;
+      }
+      @font-face {
+        font-family: 'JetBrains Mono';
+        src: url('/fonts/jetbrains-mono.woff2') format('woff2');
+        font-weight: 100 800;
+      }
+      :root {
+        --bg: #0d0e10;
+        --text: #ece8e1;
+        --muted: #a39e95;
+        --line: rgba(236, 232, 225, 0.1);
+        --grid: rgba(236, 232, 225, 0.05);
+        --accent: #ff6b3d;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--text);
+        -webkit-font-smoothing: antialiased;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        padding: 64px 72px 56px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        font-family: 'Instrument Sans', sans-serif;
+        background:
+          radial-gradient(700px 420px at 92% 0%, rgba(255, 107, 61, 0.16), transparent 70%),
+          var(--bg);
+      }
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(var(--grid) 1px, transparent 1px) 0 0 / 48px 48px,
+          linear-gradient(90deg, var(--grid) 1px, transparent 1px) 0 0 / 48px 48px;
+        mask-image: radial-gradient(900px 520px at 75% 35%, #000 30%, transparent 85%);
+      }
+      .top,
+      .bottom {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 34px;
+        font-weight: 650;
+        letter-spacing: -0.03em;
+      }
+      .logo b {
+        color: var(--accent);
+        font-weight: 650;
+      }
+      .mono {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .middle {
+        position: relative;
+        align-self: center;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: var(--text);
+        margin-bottom: 26px;
+      }
+      .eyebrow::before {
+        content: '';
+        width: 36px;
+        height: 1px;
+        background: var(--accent);
+      }
+      h1 {
+        max-width: 1000px;
+        font-size: 86px;
+        font-weight: 560;
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+      }
+      h1 em {
+        font-family: 'Instrument Serif', serif;
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: -0.02em;
+        color: var(--accent);
+      }
+      .bottom {
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+      }
+      .facts {
+        display: flex;
+        gap: 28px;
+      }
+      .facts span + span::before {
+        content: '·';
+        margin-right: 28px;
+        color: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="top">
+        <div class="logo">ANIS<b>.</b></div>
+        <div class="mono">Frontend Developer / UI Engineer</div>
+      </div>
+      <div class="middle">
+        <div class="eyebrow mono">Hello, I'm Shaikh Anis</div>
+        <h1>I Build Digital Experiences That Make an <em>Impact.</em></h1>
+      </div>
+      <div class="bottom">
+        <div class="facts mono">
+          <span>3.5+ years</span><span>Enterprise travel platforms</span><span>React.js</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

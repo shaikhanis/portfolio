@@ -1,0 +1,448 @@
+.page,
+.app {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--mock-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+.siteBar {
+  display: flex;
+  height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--mock-line);
+  background: var(--mock-surface);
+}
+
+.brand,
+.nav,
+.barEnd,
+.iconChip,
+.resultsTitle,
+.carrier,
+.stack,
+.time,
+.track,
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.brand,
+.barEnd {
+  gap: 12px;
+}
+
+.mark {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px 6px 6px 1px;
+  background: var(--color-accent);
+  transform: rotate(-8deg);
+}
+
+.nav {
+  gap: 24px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.navCurrent {
+  color: var(--color-text);
+}
+
+.iconChip {
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  border: 1px solid var(--mock-line);
+  border-radius: 50%;
+}
+
+.content {
+  padding: 28px 30px;
+}
+
+.searchCard {
+  padding: 18px;
+}
+
+.segmented,
+.fields {
+  display: flex;
+  align-items: center;
+}
+
+.segmented {
+  gap: 18px;
+  margin-bottom: 16px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.segment {
+  padding-bottom: 6px;
+}
+
+.segmentActive {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+.fields {
+  gap: 8px;
+}
+
+.route {
+  position: relative;
+  display: flex;
+  flex: 1.4;
+  min-width: 0;
+  gap: 1px;
+}
+
+.cell {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--mock-line);
+  background: var(--mock-bg);
+}
+
+.cellLabel,
+.cellMeta,
+.trackMeta {
+  color: var(--color-text-muted);
+  font-size: 9px;
+}
+
+.cellValue {
+  display: flex;
+  min-height: 15px;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.cellMeta {
+  display: flex;
+  align-items: center;
+  min-height: 8px;
+}
+
+.code,
+.clock {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.swap {
+  position: absolute;
+  top: 50%;
+  right: -11px;
+  z-index: 1;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid var(--mock-line);
+  border-radius: 50%;
+  background: var(--mock-surface-2);
+  color: var(--color-accent-text);
+  transform: translateY(-50%);
+}
+
+.metaText {
+  color: var(--color-text-muted);
+  font-size: 9px;
+}
+
+.valueText {
+  font-size: 11px;
+}
+
+.searchBtn {
+  display: flex;
+  width: max-content;
+  margin: 15px auto 0;
+}
+
+.resultsHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 22px 0 12px;
+}
+
+.resultsTitle {
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filterChip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  border: 1px solid var(--mock-line);
+  border-radius: 99px;
+  font-size: 10px;
+}
+
+.results {
+  display: grid;
+  gap: 8px;
+}
+
+.result {
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 1.1fr 0.6fr 0.7fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px;
+}
+
+.carrier {
+  gap: 9px;
+}
+
+.monogram,
+.mMonogram {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid var(--mock-line);
+  border-radius: 50%;
+  color: var(--color-accent-text);
+  font-family: var(--font-mono);
+  font-size: 9px;
+}
+
+.stack {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.time {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.timeEnd {
+  align-items: flex-end;
+}
+
+.airport {
+  color: var(--color-text-muted);
+  font-size: 9px;
+}
+
+.track {
+  min-width: 80px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.trackLine {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: var(--mock-line);
+}
+
+.trackLine::before,
+.trackLine::after {
+  position: absolute;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--color-accent);
+  border-radius: 50%;
+  background: var(--mock-bg);
+  content: '';
+}
+
+.trackLine::before {
+  left: 0;
+}
+
+.trackLine::after {
+  right: 0;
+}
+
+.stopDot {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border: 1px solid var(--color-text-muted);
+  border-radius: 50%;
+  background: var(--mock-bg);
+}
+
+.price {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.priceValue {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.selectBtn {
+  min-width: 58px;
+}
+
+.app {
+  padding: 18px 14px;
+}
+
+.appBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.iconBtn {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid var(--mock-line);
+  border-radius: 50%;
+}
+
+.appTitle {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.appRoute {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.dateStrip,
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-bottom: 1px solid var(--mock-line);
+}
+
+.date {
+  display: grid;
+  min-width: 40px;
+  justify-items: center;
+  gap: 6px;
+  padding: 9px 5px;
+  color: var(--color-text-muted);
+}
+
+.dateActive {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+.dateDay {
+  font-size: 9px;
+}
+
+.dateNum {
+  font-size: 13px;
+}
+
+.tabs {
+  gap: 10px;
+  justify-content: flex-start;
+  color: var(--color-text-muted);
+  font-size: 10px;
+}
+
+.tab {
+  padding: 10px 6px;
+}
+
+.tabActive {
+  border-bottom: 2px solid var(--color-accent);
+  color: var(--color-text);
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  margin-top: 13px;
+}
+
+.mCard {
+  display: grid;
+  gap: 13px;
+  padding: 12px;
+}
+
+.mCardSelected {
+  border-color: var(--color-accent-line);
+}
+
+.mTop,
+.mTimes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+}
+
+.mPrice {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.mTimes .track {
+  flex: 1;
+}
+
+.mMonogram {
+  width: 25px;
+  height: 25px;
+}
+
+@media (max-width: 900px) {
+  .siteBar {
+    padding-inline: 18px;
+  }
+
+  .content {
+    padding-inline: 18px;
+  }
+
+  .nav {
+    gap: 12px;
+  }
+
+  .result {
+    grid-template-columns: 1fr 0.55fr 1fr 0.55fr;
+  }
+
+  .result .price,
+  .result .selectBtn {
+    display: none;
+  }
+}

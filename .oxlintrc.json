@@ -1,0 +1,93 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "oxc",
+    "import"
+  ],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "env": {
+    "browser": true,
+    "es2024": true
+  },
+  "globals": {
+    "__SITE_URL__": "readonly",
+    "__RESUME_URL__": "readonly",
+    "__PROFILE_PHOTO_URL__": "readonly",
+    "__BUILD_DATE__": "readonly"
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/only-export-components": [
+      "warn",
+      {
+        "allowConstantExport": true
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-key": "error",
+    "react/jsx-no-target-blank": "error",
+    "react/no-danger": "error",
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "eqeqeq": [
+      "error",
+      "smart"
+    ],
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "import/no-unassigned-import": [
+      "warn",
+      {
+        "allow": [
+          "**/*.css",
+          "@fontsource/**",
+          "@fontsource-variable/**"
+        ]
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "dist/**",
+    "node_modules/**",
+    "playwright-report/**",
+    "test-results/**",
+    "coverage/**"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "scripts/**",
+        "tests/**",
+        "*.config.js",
+        "**/*.test.js",
+        "**/*.test.jsx"
+      ],
+      "env": {
+        "node": true,
+        "browser": true
+      },
+      "rules": {
+        "no-console": "off"
+      }
+    }
+  ]
+}
